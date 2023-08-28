@@ -1,6 +1,52 @@
-import pandas as pd
 import os
 import csv
 import openai
-file = pd.read_csv("/Users/yonatanwiesenfeld/Downloads/suggested_answers22-08.csv")
+from datetime import datetime
+# Replace with your actual API endpoint and key
+api_endpoint = "https://ginzi-openai-1.openai.azure.com/openai/deployments/dev-team-gpt35-deployment/chat/completions?api-version=2023-05-15"
+api_key = "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"
+secret_key = "81a9d3aa461b49f4b01383a15fc0bf70"
 
+# Set your OpenAI API key here
+openai.api_key = api_key
+
+system_content = "As a support agent for an unknown company, generate an empathetic response based on the [Agent Intent:] and the provided [Conversation:] while considering the user sentiment for a positive customer experience. The response includes a kind attention statement, introduction, body, residual message, and salutation. Don't include any extraneous information. Don't add prefix or suffix to the response. Use appropriate spacing. Answer in English only."
+
+def send_message_to_gpt():
+    intents = {
+    "accept": "Accept the customer's request",
+    "ask_question": "Ask up to 5 clarifying and essential questions. Assume the agent has access to back office information.",
+    "decline": "Decline the customer's request",
+    "goodbye": "Finalize the conversation and farewell",
+    "confirm": "Acknowledge the user's request without accepting or declining it",
+    "refer_to_engineering": "Escalate to engineering",
+    "refer_to_manager": "Escalate to manager"}
+    ticketId = input("Enter ticket ID: ")
+    company = input("Enter company name: ")
+    message = input("Enter the user message: ")
+    result = [["Company","Ticket ID","Message","accept","ask_questions","decline","goodbye","confirm","refer_to_engineering","refer_to_manager"]]
+    while message != "" or ticketId != "" or company != "":
+        temp = [company,ticketId,message]
+        for intent in intents:
+            conversation = [
+                {"role": "system", "content": system_content},
+                {"role": "user", "content": f"[Conversation:]{message}\n[Agent Intent:]{intents[intent]}"}]
+                
+            response = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo-0613",
+                messages=conversation,
+                # functions=functions,
+                # function_call="auto",  # auto is default, but we'll be explicit
+            )
+            temp.append(response["choices"][0]["message"]["content"])
+        result.append(temp)
+        ticketId = input("Enter ticket ID: ")
+        company = input("Enter company name: ")
+        message = input("Enter the user message: ")
+
+    with open(f"{os.getcwd()}/results"+f"{datetime.now().strftime("%d-%m-%Y-%H-%M-%S")}.csv", mode="w", newline="") as file:
+        writer = csv.writer(file)
+        writer.writerows(result)
+    return("CSV file created")
+
+print(send_message_to_gpt())
