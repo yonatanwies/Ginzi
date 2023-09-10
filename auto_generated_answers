@@ -4,15 +4,10 @@ import openai
 from datetime import datetime
 import os
 import glob
-# from pydrive.auth import GoogleAuth
-# from pydrive.drive import GoogleDrive
 
-# gauth = GoogleAuth()           
-# drive = GoogleDrive(gauth)  
-
-api_endpoint = "XXX"
-api_key = "API_KEY"
-secret_key = "XXX"
+api_endpoint = "https://ginzi-openai-1.openai.azure.com/openai/deployments/dev-team-gpt35-deployment/chat/completions?api-version=2023-05-15"
+api_key = "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"
+secret_key = "81a9d3aa461b49f4b01383a15fc0bf70"
 
 # Set your OpenAI API key here
 openai.api_key = api_key
@@ -54,9 +49,7 @@ def send_message_to_gpt():
                 
             response = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo-0613",
-                messages=conversation,
-                # functions=functions,
-                # function_call="auto",  # auto is default, but we'll be explicit
+                messages=conversation
             )
             temp.append(response["choices"][0]["message"]["content"])
         result.append(temp)
