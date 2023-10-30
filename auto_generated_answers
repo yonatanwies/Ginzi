@@ -1,28 +1,29 @@
+import random
 import os
 import csv
 import openai
 from datetime import datetime
 import os
-import glob
+import pandas as pd
 
 api_endpoint = "https://ginzi-openai-1.openai.azure.com/openai/deployments/dev-team-gpt35-deployment/chat/completions?api-version=2023-05-15"
-api_key = "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"
 secret_key = "81a9d3aa461b49f4b01383a15fc0bf70"
 
 # Set your OpenAI API key here
 openai.api_key = api_key
 
-system_content = "As a support agent for an unknown company, generate an empathetic response based on the [Agent Intent:] and the provided [Conversation:] while considering the user sentiment for a positive customer experience. The response includes a kind attention statement, introduction, body, residual message, and salutation. Don't include any extraneous information. Don't add prefix or suffix to the response. Use appropriate spacing. Answer in English only."
+ag_system_content = "As a support agent for an unknown company, generate an empathetic response based on the [Agent Intent:] and the provided [Conversation:] while considering the user sentiment for a positive customer experience. The response includes a kind attention statement, introduction, body, residual message, and salutation. Don't include any extraneous information. Don't add prefix or suffix to the response. Use appropriate spacing. Answer in the language the ticket was is."
 
 def send_message_to_gpt():
     intents = {
     "accept": "Accept the customer's request",
-    "ask_question": "Ask up to 5 clarifying and essential questions. Assume the agent has access to back office information.",
+    "ask_question": "Ask up to 5 clarifying and essential questions. Assume the agent has access to back office information. Do not ask for information that wasn't included in the [Conversation:]. Ask only relevant questions; this could be any number from 1-5. If you don't have anything useful questions to ask - do not ask.",
     "decline": "Decline the customer's request",
-    "goodbye": "Finalize the conversation and farewell",
-    "confirm": "Acknowledge the user's request without accepting or declining it",
-    "refer_to_engineering": "Escalate to engineering",
-    "refer_to_manager": "Escalate to manager"}
+    "goodbye": "Finalize the conversation and farewell, without any follow-up questions. Do not escalate to any other platforms.",
+    "confirm": "Let the user know the request has been acknowledged, without accepting or declining it. You may ask follow-up questions, but this is not necessary.",
+    "refer_to_engineering": "Escalate to engineering, and explain the reason",
+    "refer_to_manager": "Escalate to manager, and explain the reason"}
+
     ticketIds = []
     companies = []
     messages = []
@@ -44,7 +45,7 @@ def send_message_to_gpt():
         temp = [company,ticketId,message]
         for intent in intents:
             conversation = [
-                {"role": "system", "content": system_content},
+                {"role": "system", "content": ag_system_content},
                 {"role": "user", "content": f"[Conversation:]{message}\n[Agent Intent:]{intents[intent]}"}]
                 
             response = openai.ChatCompletion.create(
@@ -55,11 +56,92 @@ def send_message_to_gpt():
         result.append(temp)
         result.append(["","","","","","","","",""])
 
-    with open(f"{os.getcwd()}/results-"+f"{datetime.now().strftime('%d-%m-%Y-%H-%M-%S')}.csv", mode="w", newline="") as file:
+    with open(f"{os.getcwd()}/Auto_generated_answers-"+f"{datetime.now().strftime('%d-%m-%Y-%H-%M-%S')}.csv", mode="w", newline="") as file:
         writer = csv.writer(file)
         writer.writerows(result)
     return("CSV file created")
+    
+macro_system_content = "As a Support Agent, combine the provided macros following the strict rule: 'No new information or macros. Maintain the given order of the macros'. Macros are presented in the format [Macro{i}:]. Conversation is presented as [Conversation:]. Your text should be in the same language as the conversation. Incorporate all macros, even if seemingly unrelated. If the macro contains bullet points, provide a numbered list always starting from 1. If the macro doesn't contain bullet points, do not add unnecessary bullet points. Be concise and clear in your responses. Do not include any formatting that wouldn't be included in a formal response. Do not assume any type of information. The response includes a kind attention statement, introduction, body, residual message, and salutation. Don't include any extraneous information. Don't add prefix or suffix to the response. Use appropriate spacing."
+
+def old_test_different_macros():
+    messages = dict()
+    ticket = input("Enter user ticket: ")
+    macro_msg = "[Macro1]:ֿֿ\n" + input("Enter macro 1: ") + '\n'
+    macros = macro_msg
+    # macro_lst = [macro_msg]
+    while ticket != "":
+        i = 2
+        while macro_msg != "":
+            x = input(f"Enter macro {i}: ")
+            macro_msg = f"[Macro{i}]:\n" + x + '\n'
+            if x != "":
+                macros += macro_msg
+                # macro_lst.append(macro_msg)
+            if x == "":
+                macro_msg = ""
+            i+=1
+            print(macro_msg)
+            print(messages)
+        messages[ticket] = macros
+        ticket = input("Enter user ticket: ")
+        macro_msg = "[Macro1]:\n" + input("Enter macro 1: ") + '\n'
+
+    print(messages)
+    results = [["Ticket","Macros","Result"]]
+    for ticket in messages.keys():
+        conversation = [
+            {"role": "system", "content": macro_system_content},
+            {"role": "user", "content": f"{messages[ticket]}\n{ticket}"}]
+            
+        response = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo-16k",
+                messages=conversation
+            )
+        results.append([ticket,messages[ticket],response["choices"][0]["message"]["content"]])
+ 
+
+    with open(f"{os.getcwd()}/Macro_tests-"+f"{datetime.now().strftime('%d-%m-%Y-%H-%M-%S')}.csv", mode="w", newline="") as file:
+        writer = csv.writer(file)
+        writer.writerows(results)
+    return("CSV file created")
+    
+        
+# test_different_macros()
 
 
-if __name__ == "__main__":
-    print(send_message_to_gpt())
+def test_macros_with_messages(number_of_messages,messages,macros):
+    messages_df = pd.read_csv(messages)
+    macros_df = pd.read_csv(macros)
+    tickets = dict()
+    msg_numbers = random.sample(range(len(messages_df.index)),number_of_messages)
+    for message in msg_numbers:
+        number_of_macros = random.randint(1,3)
+        macro_numbers = random.sample(range(len(macros_df.index)),number_of_macros)
+        cur_mes = messages_df.iloc[message][3]
+        macro_msg = f"[Macro{1}]:\n" + macros_df.iloc[macro_numbers[0]][2] + '\n'
+        for i in range(1, number_of_macros):
+            x = macros_df.iloc[macro_numbers[i]][2]
+            macro_msg += f"[Macro{i+1}]:\n" + x + '\n'
+        tickets[cur_mes] = macro_msg
+
+    results = [["Ticket","Macros","Result"]]
+    for ticket in tickets.keys():
+        conversation = [
+            {"role": "system", "content": macro_system_content},
+            {"role": "user", "content": f"{tickets[ticket]}\n{ticket}"}]
+            
+        response = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo-16k",
+                messages=conversation
+            )
+        results.append([ticket,tickets[ticket],response["choices"][0]["message"]["content"]])
+    
+    with open(f"{os.getcwd()}/Macro_tests-"+f"{datetime.now().strftime('%d-%m-%Y-%H-%M-%S')}.csv", mode="w", newline="") as file:
+        writer = csv.writer(file)
+        writer.writerows(results)
+    return("CSV file created")
+
+
+messages = "/Users/yonatanwiesenfeld/Documents/Ginzi/messages.csv"
+macros = "/Users/yonatanwiesenfeld/Documents/Ginzi/macros.csv"
+test_macros_with_messages(10,messages,macros)
