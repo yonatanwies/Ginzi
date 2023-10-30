@@ -1,0 +1,77 @@
+Ticket,Macros,Result
+"I am trying to remove my old expired credit card and it gives an error: Also, the last payment was declined because it likely was charged to the expired card and not the latest. Not sure how to make the new card the default","[Macro1]:ֿֿ
+Dear {{ticket.requester.first_name}} , As a token of our appreciation to your loyalty and valuable feedback we have decided to grant you a 10% discount for the next year, reducing your premium costs by 880$ Best regards, 
+[Macro2]:
+Dear {{ticket.requester.first_name}}, We've downgraded your account per your request Thanks, {{current_user.name}}
+","Dear Customer,
+
+We've downgraded your account as requested. Rest assured that this will not interfere with your payment process. 
+
+On another note, as a token of our appreciation for your loyalty and valuable feedback we have decided to grant you a 10% discount for the next year. This will reduce your premium costs by 880$. 
+
+Please feel free to get in touch with us if you need any more assistance.
+
+Best regards, 
+
+Support Team"
+"Hi there, please close my account - mail@marc-richter.info - and delete all redis databases, so I can start from scratch. I am aware that means all data to be permanently deleted.","[Macro1]:ֿֿ
+Dear {{ticket.requester.first_name}} , As a token of our appreciation to your loyalty and valuable feedback we have decided to grant you a 10% discount for the next year, reducing your premium costs by 880$ Best regards, 
+[Macro2]:
+Dear {{ticket.requester.first_name}}, We've downgraded your account per your request Thanks, {{current_user.name}}
+[Macro2]:
+Dear {{ticket.requester.first_name}}, We've downgraded your account per your request Thanks, {{current_user.name}}
+","Dear Marc, 
+
+We've downgraded your account per your request. As you are aware, this means all data will be permanently deleted including all Redis databases. 
+
+As a token of our appreciation for your loyalty and valuable feedback, we have decided to grant you a 10% discount for the next year, reducing your premium costs by 880$.
+
+Best regards,
+Support Agent"
+"Hi there, please close my account - mail@marc-richter.info - and delete all redis databases, so I can start from scratch. I am aware that means all data to be permanently deleted. We need to cancel this subscription. Why is there not an option to do this in the online account? Please cancel our account ASAP. thx.","[Macro1]:ֿֿ
+Dear {{ticket.requester.first_name}} , As a token of our appreciation to your loyalty and valuable feedback we have decided to grant you a 10% discount for the next year, reducing your premium costs by 880$ Best regards, 
+[Macro2]:
+Dear {{ticket.requester.first_name}}, We've downgraded your account per your request Thanks, {{current_user.name}}
+[Macro2]:
+Dear {{ticket.requester.first_name}}, We've downgraded your account per your request Thanks, {{current_user.name}}
+[Macro2]:
+Dear {{ticket.requester.first_name}} ¬†, Following your request we've upgraded your account to premium. Best regards, {{current_user.name}} .¬†
+[Macro3]:
+Dear {{ticket.requester.first_name}}, We've downgraded your account per your request Thanks, {{current_user.name}}
+","Dear,
+
+We've acknowledged your request to close your account associated with mail@marc-richter.info. As per your request, all redis databases will be deleted, which denotes all data would be permanently removed. To clarify further, your account has been downgraded, thus concluding your existing subscription. 
+
+Please note that as a token of our appreciation to your loyalty and valuable feedback, a 10% discount was designed for your next subscription duration which would have reduced your premium costs by 880$. Despite this, post your request, we've had to quash this potential benefit.
+
+On top of this, we've also previously upgraded your account to premium as per one of your prior requests. Appreciating that changes in circumstances can call for different requirements, we ensure to remain responsive to your needs. 
+
+Please bear in mind that sometimes not all account changes are manageable online and hence the necessity to reach out to us. 
+
+Thank you for your understanding. 
+
+Best regards,"
+Idk why my acc is frozen (didnt use for a long while) plus i cant create a new acc while trying to use my discord or other email,"[Macro1]:ֿֿ
+Dear {{ticket.requester.first_name}} , As a token of our appreciation to your loyalty and valuable feedback we have decided to grant you a 10% discount for the next year, reducing your premium costs by 880$ Best regards, 
+[Macro2]:
+Dear {{ticket.requester.first_name}}, We've downgraded your account per your request Thanks, {{current_user.name}}
+[Macro2]:
+Dear {{ticket.requester.first_name}}, We've downgraded your account per your request Thanks, {{current_user.name}}
+[Macro2]:
+Dear {{ticket.requester.first_name}} ¬†, Following your request we've upgraded your account to premium. Best regards, {{current_user.name}} .¬†
+[Macro3]:
+Dear {{ticket.requester.first_name}}, We've downgraded your account per your request Thanks, {{current_user.name}}
+[Macro2]:
+Dear {{ticket.requester.first_name}}, We've downgraded your account per your request Thanks, {{current_user.name}}
+[Macro3]:
+Hi {{ticket.requester.first_name}} ,    My name is {{ticket.assignee.first_name}} and I'm a Customer Success Specialist at PayPer. It is my understanding you are looking for a [x] report.    Due to the nature and time needed to construct this report, there will be a fee of [x].    Please let me know if you would still like to proceed with this and I will alert the Analytics Team. Note, that due to the high volume of custom report requests, there may be a delay in providing the report to your team.    Regards,  {{ticket.assignee.first_name}}
+","Dear Ticket Requester, 
+
+My name is Current User, and I'm a Customer Success Specialist at PayPer. Following your request, we've upgraded your account to the premium. As a token of our appreciation for your loyalty and valuable feedback, we've decided to grant you a 10% discount for the next year, reducing your premium costs by $880.
+
+But we understood that there may have been some confusion, as we've also proceeded to downgrade your account per your request. If this was not what you intended or if you need further adjustments, please, let us know.
+
+Regarding your account being frozen, you mentioned you are looking for a particular report. Due to the nature and time needed to construct this report, there will be a fee. Please let me know if you would still like to proceed with this, and I will alert the Analytics Team. Note that due to the high volume of custom report requests, there may be a delay in providing the report to your team. 
+
+Best regards,
+Current User Name"

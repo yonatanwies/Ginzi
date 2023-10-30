@@ -1,0 +1,422 @@
+Ticket,Macros,Result
+"Hello, We are experiencing a sync error with the above referenced vendor. Invoice #1126, in the amount of $600.00, was entered in Tipalti on 7/6/21 and paid on 7/14/21. However, neither the bill nor the payment synced to Netsuite after creation. In looking through sync errors, I discovered an error in sync Can someone please assist with this? Thank you for your time and have a wonderful day! Kind Regards, Amber Reed Staff Accountant (909)796-2561 x551 | Loma Linda, CA","[Macro1]:
+Dear {{ticket.requester.first_name}}​,
+As a token of our appreciation to your loyalty and valuable feedback we have decided to grant you a 10% discount for the next year, reducing your premium costs by 880$
+Best regards,
+{{current_user.name}}​.
+[Macro2]:
+Hello [Payer],
+
+
+
+Unfortunately, we have been advised that transaction [payment ref code] is now blocked pursuant to U.S. Treasury regulations under the OFAC. The payment cannot be released without an approved OFAC license. To apply for a license, please visit the OFAC website at www.ustreas.gov/ofac and submit a license request online or you may contact OFAC directly at 1 800 540-6322.
+
+Please let us know if you should have any questions.
+
+
+
+
+
+[Macro3]:
+Hi,
+
+This payee uploaded a valid {insert document title} per {confirmation method}. Please review and clear if you agree.
+
+Thanks,
+","Dear [Payer],
+
+We regret to inform you that transaction [payment ref code] has been blocked in accordance with U.S. Treasury regulations under the OFAC. To release the payment, an approved OFAC license is required. You can apply for a license by visiting the OFAC website at www.ustreas.gov/ofac and submitting a license request online. Alternatively, you can contact OFAC directly at 1 800 540-6322.
+
+If you have any questions, please feel free to reach out to us.
+
+Kind regards,
+
+Amber Reed
+Staff Accountant
+(909)796-2561 x551 | Loma Linda, CA
+
+
+Hello [Ticket.requester.first_name],
+
+As a token of our appreciation for your loyalty and valuable feedback, we are pleased to inform you that you have been granted a 10% discount on your premium costs for the next year. This will reduce your premium costs by $880.
+
+We value your continued support and look forward to serving you. If you have any questions or need further assistance, please don't hesitate to reach out.
+
+Best regards,
+
+Amber Reed
+Staff Accountant
+(909)796-2561 x551 | Loma Linda, CA
+
+
+Hi,
+
+We are currently experiencing a sync error with the vendor you mentioned. The invoice #1126, with a total amount of $600.00, was entered into Tipalti on 7/6/21 and paid on 7/14/21. However, neither the bill nor the payment has been synced to Netsuite after creation. I have identified an error in the sync.
+
+Could you please assist us in resolving this issue? Your prompt attention to this matter is greatly appreciated.
+
+Thank you for your time and have a wonderful day!
+
+Kind regards,
+
+Amber Reed
+Staff Accountant
+(909)796-2561 x551 | Loma Linda, CA"
+"Hi there, I’m hoping you may be able to help with giving one of our payroll team access to our Pento account. When I try adding Kate, it says she is registered with another company but I can’t see what one that would be with. Would you be able to have a look from your side? Name – Kate Vogt Email - kate.vogt@azerion.com Thanks, Georgina","[Macro1]:
+(Prior to escalation always ask the customer for the failing request and response + code samples of how they generate the key and pass along to Ori.)
+","Dear Georgina,
+
+Thank you for reaching out to us. I understand that you are experiencing difficulties adding Kate Vogt to your Pento account as it states that she is registered with another company. I apologize for the inconvenience this has caused.
+
+To assist you further, could you please provide me with the failing request and response, as well as any code samples that you have used to generate the key? This will allow me to investigate the issue more thoroughly.
+
+Once I have this information, I will work diligently to resolve the problem and provide you with a solution. Please send the requested details to me at your earliest convenience.
+
+I appreciate your patience and cooperation in this matter. Should you require any additional assistance, please don't hesitate to let me know.
+
+Kind regards,
+
+[Your Name]
+Pento Support Agent
+
+[Conversation:]"
+"HELLO vcita team, I'm a Web application security analyst who recently checked your website vcita for vulnerabilities. I found some issues with the client-side and authentication parts. I'm writing to let you know about these findings and to suggest that we work together to fix them as soon as possible. I can provide a detailed technical report with all the necessary information to help your team understand and resolve the problems. I'm also interested in participating in your rewards program for reporting security vulnerabilities. I'm committed to responsible disclosure and want to help improve the overall security of your online business. Thank You, Security Givers","[Macro1]:
+Hi {{ticket.requester.first_name}}, 
+
+Payee {{ticket.ticket_field_option_title_27964921}} has been asked to enter their birth date, along with a valid ID into the iframe. However, this birth date does not match the ID provided. 
+This could be that the payee has entered in the current date. 
+
+Please have them log back into the iframe and correct the DOB. 
+
+Thanks, 
+[Macro2]:
+Here is our knowledge center to view your full list of available features and guidance on how to use them
+","Hi Security Givers, 
+
+Thank you for reaching out to us regarding the security findings on our website vcita. We appreciate your commitment to responsible disclosure and your willingness to help improve the security of our online business. 
+
+We are interested in receiving the detailed technical report from you. Please provide us with the necessary information so that our team can understand and resolve the issues as soon as possible. 
+
+Once we have reviewed the report, we will be able to discuss the rewards program for reporting security vulnerabilities. 
+
+Thank you again for bringing this to our attention. We look forward to working together to strengthen the security of our website. 
+
+Kind regards, 
+vcita Team"
+"Hey, I withdraw some money with PayPal from dmarket and says success but I didn't get any money, I contacted with dmarket support and they told me to contact with you guys. Is there anything you can do to help me?","[Macro1]:
+Here is our knowledge center to view your full list of available features and guidance on how to use them
+","Dear customer,
+
+Thank you for reaching out to us regarding your withdrawal issue. We apologize for any inconvenience caused.
+
+Please allow us to assist you with this matter. In order to provide you with the appropriate assistance, we kindly request you to provide us with the following details:
+
+1. Your PayPal email address.
+2. The transaction ID of the withdrawal.
+
+Once we receive this information, we will investigate the issue and work towards resolving it for you.
+
+We appreciate your patience and cooperation.
+
+Kind regards,
+[Your Name]
+Support Agent"
+"Hi, I have received many emails from different delays in the trips I have. Can you please re confirm to me properly the new time slots for the six people we have. Originally we have booked the following: Aug 5th: 9.30 AM Padang-Gili Aug 10th: 12PM-Gili -Padang I don’t accept any delay of August 5th as I will loose the entire day so if that is the case please explain if there is an alternative to take an 8.30 am slot for the six people, Thank you for attentiveness and fast solution towards the inexplicable mess you are creating, Best regards Magdalena Blanco","[Macro1]:
+Dear {{ticket.requester.first_name}}, 
+
+In order to create npon employee users follow these instructions:
+
+1. log into the platform
+
+2. go to settings
+
+3. go to user management
+
+4. Create new user
+
+5. Enter the non-employee users email
+
+6. Click save
+
+7. A popup will show a warning about non employee users
+
+8. Click on Confirm to finalize the action
+
+
+
+We hope that this is helpful, if you have any further questions let us know. 
+
+
+
+Best regards,
+
+{{current_user.first_name}}
+[Macro2]:
+Hello {{ticket.requester.name}}. Our agent {{current_user.name}} has tried to contact you about this request but we haven't heard back from you yet. Please let us know if we can be of further assistance. Thanks. 
+[Macro3]:
+Dear {{ticket.requester.first_name}}​,
+As a token of our appreciation to your loyalty and valuable feedback we have decided to grant you a 10% discount for the next year, reducing your premium costs by 880$
+Best regards,
+{{current_user.name}}​.
+","Hello Magdalena Blanco,
+
+Thank you for reaching out to us regarding the delays in your trips. We apologize for any inconvenience caused.
+
+To confirm the new time slots for the six people in your group, please find the updated information below:
+
+1. August 5th: 9:30 AM Padang-Gili - No change
+2. August 10th: 12:00 PM Gili-Padang - No change
+
+Regarding your concern about losing the entire day on August 5th, we understand your frustration. Unfortunately, we are unable to accommodate an 8:30 AM slot for the six people in your group. However, we assure you that we are working diligently to minimize any further disruptions.
+
+If you have any additional questions or require further assistance, please let us know. We appreciate your understanding.
+
+Best regards,
+
+[Macro3:{{current_user.name}}]"
+Still havent received the ticket after 24 hours,"[Macro1]:
+Dear (company name),
+
+
+
+In an effort to increase security PayPer has turned on Two-Factor Authentication for all supplier portal (PayPer iframe) users. The payee will need a phone to access the system. If a payee requires additional help, please reach out on behalf of the payee to support at support@payper.com.
+
+
+
+Please see our article on Two-Factor Authentication here:
+
+https://support2.payper.com/Content/Topics/GetStarted/TwoFactorAuthentication.htm?Highlight=2FA
+
+
+
+Let us know if there are any questions or concerns with this update.
+
+
+
+Kind regards,
+
+
+
+[Macro2]:
+Hello Team,
+
+
+
+Please see attached ACH Debit Pre-Authorization Form for payer [Payer Name].
+
+
+
+Cap Limit: [Cap limit requested]
+
+
+
+Please let me know if you require any additional information.
+
+
+","Dear (company name),
+
+Thank you for reaching out to us. We appreciate your cooperation in implementing Two-Factor Authentication for all supplier portal users. This additional layer of security will help protect sensitive information. If any payee requires assistance with accessing the system, kindly contact us at support@payper.com on behalf of the payee.
+
+To learn more about Two-Factor Authentication, please refer to our article here: [Insert hyperlink to article]
+
+If you have any questions or concerns regarding this update, please feel free to let us know. We are here to assist you.
+
+Kind regards,
+
+[Your Name]
+
+Hello Team,
+
+I hope this email finds you well. I have attached the ACH Debit Pre-Authorization Form for payer [Payer Name]. Please review the form and let me know if any additional information is required.
+
+The Cap Limit requested for this payer is: [Cap limit requested]
+
+Should you have any further questions or need assistance, please don't hesitate to reach out.
+
+Thank you for your attention to this matter.
+
+Kind regards, 
+
+[Your Name]
+
+Hello,
+
+Thank you for contacting us. We apologize for any inconvenience caused. Please note that the ticket may take up to 24 hours to reach your inbox. If you still haven't received it after this timeframe, kindly check your spam/junk folder as it may have been filtered there. If you are unable to locate the ticket, please provide us with the following details:
+
+1. Your email address
+2. Ticket or reference number (if available)
+3. Date and time of your initial contact
+
+With this information, we will be able to assist you further in resolving the issue.
+
+Thank you for your patience and cooperation.
+
+Best regards,
+
+[Your Name]"
+i bought a train ticket 2 days ago but still cant see any confirmation and cant find my booking in your site even in your sent email you said the process will be completed in 24 hours but now its about 48 hours from bought it,"[Macro1]:
+Hi {{ticket.requester.first_name}},
+
+The err=6 error is a relatively common encryption error, meaning that somewhere in the encryption process that generates the hash key at the end of the query string for the iframe, something went wrong, and the hash key is incorrect. What we do in cases of this error is ask for the outputs for each step of the hash key building process to debug.
+
+Below I have an example of how the query string is built, and what we'll need is example values of each step of the process, when it's UTF8 encoded, HMACS encoded, etc
+
+One common cause of this error in sandbox is using the production encryption key, instead of the sandbox key, so that's a possible thing to check, as well.
+
+Kind regards,
+
+Thanks,
+
+{{current_user.name}}
+
+
+","Hi,
+
+Thank you for reaching out to us. I apologize for the inconvenience you have experienced with your train ticket booking. 
+
+Regarding the err=6 error, it is a common encryption error that occurs when there is an issue with the generation of the hash key during the encryption process. In order to assist you further, we would need the outputs from each step of the hash key building process for debugging purposes. This would include example values for UTF8 encoding, HMACS encoding, and so on.
+
+Additionally, please ensure that you are using the correct encryption key. In some cases, using the production encryption key instead of the sandbox key can cause this error.
+
+Kindly provide the requested information so that we can investigate the issue and assist you accordingly.
+
+Thank you for your cooperation.
+
+Kind regards,
+
+[Macro0:]"
+"yo guys, i've been collecting points for a while now, and yet i have nothing that im able to purchase, you never have anything avaliable so why should i keep colleting if i get nothing from it? are you guys completely dead?","[Macro1]:
+(Prior to escalation always ask the customer for the failing request and response + code samples of how they generate the key and pass along to Ori.)
+[Macro2]:
+Here is our knowledge center to view your full list of available features and guidance on how to use them
+[Macro3]:
+Hello {{ticket.requester.name}}. Our agent {{current_user.name}} has tried to contact you about this request but we haven't heard back from you yet. Please let us know if we can be of further assistance. Thanks. 
+","Hello [Customer's Name],
+
+Thank you for reaching out to us regarding your points collection. We apologize for any inconvenience you may have experienced.
+
+We understand that you are concerned about the availability of items for purchase with your accumulated points. We would like to assure you that we regularly update and add new items to our inventory. However, please note that the availability of items may vary depending on several factors such as stock levels, popularity, and demand.
+
+We value your loyalty and would like to help you make the most of your points. In order to assist you better, could you please provide us with some additional information? Specifically, we would request the following:
+1. Details of the items you have been interested in purchasing.
+2. Any specific preferences or requirements you have for the items.
+
+Once we receive this information, we will investigate further and assist you in finding a suitable item for your points collection. We appreciate your patience and cooperation.
+
+Please do not hesitate to contact us if you have any further questions or concerns. We are here to help.
+
+Thank you for your attention to this matter.
+
+Kind regards,
+[Support Agent's Name]
+[Support Agent's Contact Information]"
+"Hello, My calendar of booking is not sincronizing with one of my properties. The property is called Fab San Cristobal. I copy the screen with the calendar of Guesty with open dates in october and my calendar of Booking with closed dates. I also attached the ""matched Booking.com property"" in guesty. I need your help to have all the calendars syncronised. Thanks! Emma","[Macro1]:
+Hello Team,
+
+
+
+Please see attached ACH Debit Pre-Authorization Form for payer [Payer Name].
+
+
+
+Cap Limit: [Cap limit requested]
+
+
+
+Please let me know if you require any additional information.
+
+
+[Macro2]:
+Hello,
+
+
+
+Payee {{ticket.ticket_field_option_title_27964921}} has been flagged in our system due to their Bank Name having a close to or exact match to a bank that is blocked in our system.
+
+
+
+In order for us to clear this matter, we are in need of the Purpose of Payment for this payee.
+
+
+
+Please let me know if you have any questions or concerns.
+
+
+
+Kind Regards,
+
+[Macro3]:
+Hi {Payer Contact}, 
+
+Payee {{ticket.ticket_field_option_title_27964921}} has uploaded an ID that has been tampered with and/or edited and the payment will be rejected.
+Please log into the payer dashboard and block this payee via the Risk Management Module (refer to https://support.payper.com/Content/Topics/User%20Guide/manage_payee_risk.htm?Highlight=block%20payee) 
+
+","Hello Emma,
+
+Thank you for contacting our support team. I understand that you are experiencing synchronization issues with the calendar of your property, Fab San Cristobal. I apologize for the inconvenience this may have caused you. 
+
+To address this issue, our technical team will need to investigate further. Kindly provide us with the following information:
+
+1. The calendar screenshot from Guesty showing open dates in October.
+2. The calendar screenshot from Booking.com showing closed dates.
+3. The ""matched Booking.com property"" in Guesty.
+
+Once we have this information, our team will work on synchronizing the calendars for you. 
+
+If you have any additional questions or concerns, please let me know. 
+
+Kind regards,"
+"Hi, I am emailing your team because I see this week we currently need to fund the amount that was a balance in our account last week. Can someone kindly assist on this? We had crucial payments that needed to be paid last week and we subtracted the 103k as our balance from our prefund from last week and","[Macro1]:
+Hello {{ticket.requester.first_name}},
+
+Payee {{ticket.ticket_field_option_title_27964921}} has been flagged in our OFAC compliance process. We will need some proof of identification for the Address. 
+
+We can accept the below documents:
+Bank statement 
+Credit card statement 
+Insurance Statement/Card 
+Lease/Rental Agreement 
+Mortgage Billing Statement 
+Phone Bill 
+Utility Bill 
+Cable Bill
+
+Kind regards,
+[Macro2]:
+Dear {{ticket.requester.first_name}}​ ,
+Following your request we've upgraded your account to premium.
+Best regards,
+{{current_user.name}}​. 
+","Hello [Customer's Name],
+
+I hope this email finds you well. We have flagged payee [Payee Name] in our OFAC compliance process and as part of the process, we require proof of identification for the address. To proceed with funding, we kindly request that you provide one of the following documents as proof of address:
+
+1. Bank statement
+2. Credit card statement
+3. Insurance statement/card
+4. Lease/rental agreement
+5. Mortgage billing statement
+6. Phone bill
+7. Utility bill
+8. Cable bill
+
+Once we receive the necessary documentation, we will be able to proceed with funding your account.
+
+Thank you for your cooperation.
+
+Kind regards,
+
+[Your Name]
+Support Agent
+
+--
+[Macro2]:
+Dear [Customer's Name],
+
+Thank you for reaching out to us regarding the funding of your account. We have upgraded your account to premium as per your request. 
+
+Should you have any further inquiries or require any assistance, please do not hesitate to reach out to us.
+
+Best regards,
+[Your Name]
+Support Agent"

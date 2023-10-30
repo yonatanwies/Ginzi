@@ -1,0 +1,14 @@
+Ticket,Macros,Result
+" I am trying to remove my old expired credit card and it gives an error. Also, the last payment was declined because it likely was charged to the expired card and not the latest. Not sure how to make the new card the default.","[Macro1]:ֿֿ
+Dear {{ticket.requester.first_name}} , As a token of our appreciation to your loyalty and valuable feedback we have decided to grant you a 10% discount for the next year, reducing your premium costs by 880$ Best regards, 
+[Macro2]:
+Dear {{ticket.requester.first_name}}, We've downgraded your account per your request Thanks, {{current_user.name}}
+","Dear Sir/Madam, 
+
+As a token of our appreciation for your loyalty and the valuable feedback that you have shared with us, we have decided to grant you a 10% discount for the next year. This will reduce your premium costs by 880$. 
+
+Moreover, following your recent request, we've downgraded your account. You mentioned that you faced an issue trying to remove your expired credit card. Also, you mentioned that the last payment was declined, likely due to charges applied to the expired card and not the most recent. Unfortunately, you're unsure about how to set the new card as the default. 
+
+I understand how frustrating this may be and assure you that we're committed to providing a resolution promptly. 
+
+Best regards"

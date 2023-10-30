@@ -1,0 +1,326 @@
+macro name,macro id,content
+10% discount,17221460638609,"Dear {{ticket.requester.first_name}}​,
+As a token of our appreciation to your loyalty and valuable feedback we have decided to grant you a 10% discount for the next year, reducing your premium costs by 880$
+Best regards,
+{{current_user.name}}​."
+2FA Implementation,19127243972369,"Dear (company name),
+
+
+
+In an effort to increase security PayPer has turned on Two-Factor Authentication for all supplier portal (PayPer iframe) users. The payee will need a phone to access the system. If a payee requires additional help, please reach out on behalf of the payee to support at support@payper.com.
+
+
+
+Please see our article on Two-Factor Authentication here:
+
+https://support2.payper.com/Content/Topics/GetStarted/TwoFactorAuthentication.htm?Highlight=2FA
+
+
+
+Let us know if there are any questions or concerns with this update.
+
+
+
+Kind regards,
+
+
+"
+12/24: ACH and Wire delay,19127480953873,"Hello
+
+
+
+Due to a system issue with our banking partner; some International ACH and Wire payments that had expected value dates of Tuesday, 12/24/2019 will experience a one or two day delay depending on their foreign exchange currency.
+
+
+
+No additional action is required.
+
+
+
+We have attached the impacted transactions for your review.
+
+
+
+My sincere apologies for any inconvenience this may have caused and please let me know if you have any questions.
+"
+1099 Missing Payees,19127466246417,"Dear {{ticket.ticket_field_26932112}}​,
+
+
+
+We have discovered there were several payees missing from your 1099 preparation report. This issue is related to payments that were made while the payee had an invalid TIN. 
+
+
+In some cases, payees are missing, and in some cases, they might be displayed with partial data. We’re working on fixing this issue.
+
+
+In the meantime, you can find below the IDs of the affected payee(s):
+
+
+<List of payees>
+
+
+In order to gather the relevant information, please use the payee’s tax form which can be accessed from the Payees tab, and the payment details report for their payment information.
+
+
+
+Kind regards,
+The PayPer Support Team"
+change 2fa,19127473771153,"Hi {{ticket.requester.first_name}}​,
+
+Payee {{ticket.ticket_field_27964921}} ​​ (Cc'd here) reached out to us to unlock their account.
+
+Accounts become locked after 5 failed login attempts and remain locked for 10 hours after the most recent failed login attempt. If the account is still locked, you can look up the payee details in your PayPer dashboard, click the Actions button, hover over Payee Status and Unlock payee account. If that option is not there, the account is no longer locked. A good idea would also be to send a password reset email.
+
+​​​
+
+I hope this helps.
+
+Kind regards,"
+Blocked/Seized Funds (Payer),19127469016721,"Hello [Payer],
+
+
+
+Unfortunately, we have been advised that transaction [payment ref code] is now blocked pursuant to U.S. Treasury regulations under the OFAC. The payment cannot be released without an approved OFAC license. To apply for a license, please visit the OFAC website at www.ustreas.gov/ofac and submit a license request online or you may contact OFAC directly at 1 800 540-6322.
+
+Please let us know if you should have any questions.
+
+
+
+
+"
+Blocked IP - Twitch Payees  (Payees with Payer Exceptions),19127483935761,"Hello,
+
+
+
+Your account was flagged for logging into a high-risk region (Country). For us to clear this matter, a proof of residency and valid ID are needed and the reason for logging in from a sanctioned region. Proof of residency must be dated within the last 60 days and can be any of the following:
+
+
+
+- Bank statement
+- Credit card statement
+- Insurance Statement/Card
+- Lease/Rental Agreement
+- Mortgage Billing Statement
+- Phone Bill
+- Utility Bill
+- Cable Bill
+
+
+
+Please note: you are able to redact (black out) private information such as account balances or transactions on your proof of residence document. However, the last 4 digits of the account number (if applicable), name, and address must remain visible.
+
+
+
+Please provide this information within 8 days and let me know if you have any questions or concerns
+
+
+"
+API Escalation,19127468934673,(Prior to escalation always ask the customer for the failing request and response + code samples of how they generate the key and pass along to Ori.)
+ACH Debit – Payment Ops Request,19127467392273,"Hello Team,
+
+
+
+Please see attached ACH Debit Pre-Authorization Form for payer [Payer Name].
+
+
+
+Cap Limit: [Cap limit requested]
+
+
+
+Please let me know if you require any additional information.
+
+"
+Account Management::Communicate transfer to Clients,19127476641425,"Hi {{ticket.requester.first_name}},
+
+
+
+We have received your request. This request has been assigned to an Account Manager. The first available person will reach out to you with-in the next business day.
+
+
+
+We appreciate your business and look forward to assisting you.
+
+
+
+
+
+
+
+
+
+
+"
+"Compliance::To Payer- Tampered With/Invalid ID
+",19127478152337,"Hi {Payer Contact}, 
+
+Payee {{ticket.ticket_field_option_title_27964921}} has uploaded an ID that has been tampered with and/or edited and the payment will be rejected.
+Please log into the payer dashboard and block this payee via the Risk Management Module (refer to https://support.payper.com/Content/Topics/User%20Guide/manage_payee_risk.htm?Highlight=block%20payee) 
+"
+Compliance::Third Party Info Request (outgoing),19127451203217,"Hi {{ticket.requester.first_name}},
+
+Our third party provider has asked for additional information for the following payment. Could you please answer the questions below for the following payment:
+
+Unusual activity identified:
+
+Acc Name:
+idap: {{ticket.ticket_field_option_title_27964921}}
+payer ref code: {{ticket.ticket_field_option_title_26834041}}
+
+Information required:
+
+{insert questions from 3rd party}
+
+Thank you,"
+Compliance::Request Address details for Payee ID (outgoing),19127466459281,"Hello {{ticket.requester.first_name}},
+
+Payee {{ticket.ticket_field_option_title_27964921}} has been flagged in our OFAC compliance process. We will need some proof of identification for the Address. 
+
+We can accept the below documents:
+Bank statement 
+Credit card statement 
+Insurance Statement/Card 
+Lease/Rental Agreement 
+Mortgage Billing Statement 
+Phone Bill 
+Utility Bill 
+Cable Bill
+
+Kind regards,"
+Compliance::Payment in another country (High Level),19127474183185,"Hi {{ticket.requester.first_name}},
+
+
+
+We just want to be clear this carries increased risk for increased AML (Anti-Money Laundering) risk. Once we get some high level details on why you need it, we will see if we require more specific information from your end.
+
+
+
+1. Please help us establish that <Payer Name> has an existing relationship with your payees. (could be payment history or agreement)
+
+2. Please provide an explanation for why you need to have payees get paid in different country. The more examples the better.
+
+
+
+Let us know if we can help or clarify further.
+
+
+
+Thanks!
+"
+Compliance::OFAC Crimea Hit (outgoing) (copy),19127451075089,"Hi {{ticket.requester.first_name}},
+
+Payee with ID {{ticket.ticket_field_option_title_27964921}} was a positive hit on OFAC as the payee is located in the region of Crimea. Due to US Sanctions, payments cannot be made to this region. We have blocked this payee from attempting to receive payments.
+
+Please us know if you have any questions.
+
+Regards,"
+Compliance::Internal- Incorrect DOB,19127466401297,"Hi {{ticket.requester.first_name}}, 
+
+Payee {{ticket.ticket_field_option_title_27964921}} has been asked to enter their birth date, along with a valid ID into the iframe. However, this birth date does not match the ID provided. 
+This could be that the payee has entered in the current date. 
+
+Please have them log back into the iframe and correct the DOB. 
+
+Thanks, "
+Compliance::Internal - Payee Uploaded Invalid ID,19127473808273,"Hi,
+
+Payee {{ticket.ticket_field_option_title_27964921}} uploaded an invalid ID. Please reach out to the payer and request a valid ID.
+
+Thanks,"
+Compliance::Internal - ID Verification,19127473712017,"Hi,
+
+This payee uploaded a valid {insert document title} per {confirmation method}. Please review and clear if you agree.
+
+Thanks,"
+Compliance::Form R Request ,19127459605137,"Hello,
+
+
+
+We have received a notification requesting that payee {{ticket.ticket_field_option_title_27964921}} reach out to their bank and fill out Inward Remittance Form (R), indicating the purpose of payment in order to release payment {{ticket.ticket_field_option_title_26834041}}.
+
+
+
+Please let me know if you have any questions or concerns.
+
+
+
+Kind Regards,"
+Compliance::Follow up Payer request payee ID,19127477906449,"Hi {{ticket.requester.first_name}},
+
+Just wanted to follow up on this request. The ID that was provided is invalid because {insert reason here}. We will need {insert Payee name} to upload a valid ID in order for us to review.
+
+Best,
+
+"
+Compliance::Bank SWIFT::Request Purpose of Payment,19127427134609,"Hello,
+
+
+
+Payee {{ticket.ticket_field_option_title_27964921}} has been flagged in our system due to their Bank Name having a close to or exact match to a bank that is blocked in our system.
+
+
+
+In order for us to clear this matter, we are in need of the Purpose of Payment for this payee.
+
+
+
+Please let me know if you have any questions or concerns.
+
+
+
+Kind Regards,
+"
+Creating non employee users,18876142677521,"Dear {{ticket.requester.first_name}}, 
+
+In order to create npon employee users follow these instructions:
+
+1. log into the platform
+
+2. go to settings
+
+3. go to user management
+
+4. Create new user
+
+5. Enter the non-employee users email
+
+6. Click save
+
+7. A popup will show a warning about non employee users
+
+8. Click on Confirm to finalize the action
+
+
+
+We hope that this is helpful, if you have any further questions let us know. 
+
+
+
+Best regards,
+
+{{current_user.first_name}}"
+Link to the knowledge center,17221497984529,Here is our knowledge center to view your full list of available features and guidance on how to use them
+Upgrade account,17221437732753,"Dear {{ticket.requester.first_name}}​ ,
+Following your request we've upgraded your account to premium.
+Best regards,
+{{current_user.name}}​. "
+Encryption error,11742687110161,"Hi {{ticket.requester.first_name}},
+
+The err=6 error is a relatively common encryption error, meaning that somewhere in the encryption process that generates the hash key at the end of the query string for the iframe, something went wrong, and the hash key is incorrect. What we do in cases of this error is ask for the outputs for each step of the hash key building process to debug.
+
+Below I have an example of how the query string is built, and what we'll need is example values of each step of the process, when it's UTF8 encoded, HMACS encoded, etc
+
+One common cause of this error in sandbox is using the production encryption key, instead of the sandbox key, so that's a possible thing to check, as well.
+
+Kind regards,
+
+Thanks,
+
+{{current_user.name}}
+
+"
+Customer not responding,360118972677,Hello {{ticket.requester.name}}. Our agent {{current_user.name}} has tried to contact you about this request but we haven't heard back from you yet. Please let us know if we can be of further assistance. Thanks. 
+Downgrade and inform,360118972657,"Dear {{ticket.requester.first_name}}, 
+We've downgraded your account per your request
+Thanks,
+{{current_user.name}}"

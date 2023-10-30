@@ -1,0 +1,110 @@
+Ticket,Macros,Result
+"I am trying to remove my old expired credit card and it gives an error: Also, the last payment was declined because it likely was charged to the expired card and not the latest. Not sure how to make the new card the default","[Macro1]:ֿֿ
+ Dear {{ticket.requester.first_name}} , As a token of our appreciation to your loyalty and valuable feedback we have decided to grant you a 10% discount for the next year, reducing your premium costs by 880$ Best regards, {{current_user.name}} .
+[Macro2]:
+Dear {{ticket.requester.first_name}},  We've downgraded your account per your request Thanks, {{current_user.name}}
+","[Conversation:]
+User: I am trying to remove my old expired credit card and it gives an error. Also, the last payment was declined because it likely was charged to the expired card and not the latest. Not sure how to make the new card the default.
+
+[Macro1]:ֿֿ
+Dear {{ticket.requester.first_name}}, As a token of our appreciation for your loyalty and valuable feedback, we have decided to grant you a 10% discount for the next year, reducing your premium costs by $880. Please note that this discount is applicable to your account. 
+
+Regarding your query about removing the old expired credit card, we apologize for the inconvenience. To assist you further, could you please provide more information about the error message you are facing? Additionally, to update your default payment card, please follow the steps below:
+
+1. Log in to your account.
+2. Go to the ""Payment Settings"" or ""Billing"" section.
+3. Locate the old expired card and select ""Remove"" or ""Delete"".
+4. Add your new credit card details and select ""Set as Default"" or similar option.
+
+Once you complete these steps, your new card will be set as the default payment method. If you encounter any issues during this process, do not hesitate to reach out to us for further assistance. We're here to help!
+
+Best regards,
+{{current_user.name}}
+
+[Macro2]:
+Dear {{ticket.requester.first_name}}, 
+We've downgraded your account per your request. If you have any further questions or concerns, please don't hesitate to reach out. 
+
+Thanks, 
+{{current_user.name}}"
+"Hi there, please close my account - mail@marc-richter.info - and delete all redis databases, so I can start from scratch. I am aware that means all data to be permanently deleted.","[Macro1]:ֿֿ
+ Dear {{ticket.requester.first_name}} , As a token of our appreciation to your loyalty and valuable feedback we have decided to grant you a 10% discount for the next year, reducing your premium costs by 880$ Best regards, {{current_user.name}} .
+[Macro2]:
+Dear {{ticket.requester.first_name}},  We've downgraded your account per your request Thanks, {{current_user.name}}
+","Dear Marc,
+
+Thank you for reaching out to us. We have received your request to close your account and delete all Redis databases associated with it.
+
+We understand that you would like to start fresh and we are happy to assist you with this process. However, please note that deleting all data means that it will be permanently deleted and cannot be recovered.
+
+Please confirm your request to close the account and delete the Redis databases, and we will proceed accordingly. If you have any further questions or need assistance, please let us know.
+
+Kind regards,
+[Macro1]"
+We need to cancel this subscription. Why is there not an option to do this in the online account? Please cancel our account ASAP. thx.,"[Macro1]:ֿֿ
+ Dear {{ticket.requester.first_name}} , As a token of our appreciation to your loyalty and valuable feedback we have decided to grant you a 10% discount for the next year, reducing your premium costs by 880$ Best regards, {{current_user.name}} .
+[Macro2]:
+Dear {{ticket.requester.first_name}},  We've downgraded your account per your request Thanks, {{current_user.name}}
+[Macro2]:
+Dear {{ticket.requester.first_name}}  , Following your request we've upgraded your account to premium. Best regards, {{current_user.name}} . 
+[Macro3]:
+ Dear {{ticket.requester.first_name}},  We've downgraded your account per your request Thanks, {{current_user.name}}
+","Dear customer,
+
+Thank you for reaching out to us. We apologize for any inconvenience caused. 
+
+To cancel your subscription, please follow the steps below:
+
+1. Log in to your online account.
+2. Navigate to the ""Account Settings"" section.
+3. Locate the ""Subscription"" tab.
+4. Select the option to cancel your subscription.
+5. Confirm the cancellation.
+
+If you encounter any difficulties, please let us know, and we will assist you further.
+
+Thank you for your understanding and support.
+
+Kind regards,
+[Agent Name]
+
+Residual Message: Please note that your account cancellation request has been received and will be processed as soon as possible.
+
+Salutation: Goodbye."
+Idk why my acc is frozen (didnt use for a long while) plus i cant create a new acc while trying to use my discord or other email ,"[Macro1]:ֿֿ
+ Dear {{ticket.requester.first_name}} , As a token of our appreciation to your loyalty and valuable feedback we have decided to grant you a 10% discount for the next year, reducing your premium costs by 880$ Best regards, {{current_user.name}} .
+[Macro2]:
+Dear {{ticket.requester.first_name}},  We've downgraded your account per your request Thanks, {{current_user.name}}
+[Macro2]:
+Dear {{ticket.requester.first_name}}  , Following your request we've upgraded your account to premium. Best regards, {{current_user.name}} . 
+[Macro3]:
+ Dear {{ticket.requester.first_name}},  We've downgraded your account per your request Thanks, {{current_user.name}}
+[Macro2]:
+Hi {{ticket.requester.first_name}} ,  Payee {{ticket.ticket_field_27964921}} (Cc'd here) reached out to us to unlock their account.  Accounts become locked after 5 failed login attempts and remain locked for 10 hours after the most recent failed login attempt. If the account is still locked, you can look up the payee details in your PayPer dashboard, click the Actions button, hover over Payee Status and Unlock payee account. If that option is not there, the account is no longer locked. A good idea would also be to send a password reset email.    I hope this helps.  Kind regards,
+[Macro3]:
+Dear {{ticket.requester.first_name}} , As a token of our appreciation to your loyalty and valuable feedback we have decided to grant you a 10% discount for the next year, reducing your premium costs by 880$ Best regards, {{current_user.name}} .
+","Dear customer,
+
+Thank you for reaching out to us. I'm sorry to hear that your account is frozen and you're unable to create a new account using your Discord or other email. We understand your frustration and we're here to assist you.
+
+Based on your message, it seems like there are two separate issues:
+ 
+1. Account freeze: Accounts can become locked after 5 failed login attempts and remain locked for 10 hours. To unlock your account, please follow these steps:
+   1. Log into your PayPer dashboard.
+   2. Go to the Payee Status section.
+   3. Click on the Actions button.
+   4. Hover over Payee Status and select ""Unlock payee account"" if available.
+   5. If the option is not available, your account may no longer be locked.
+
+2. Unable to create a new account: It's possible that there might be an issue with your Discord or other email. We recommend trying the following troubleshooting steps:
+   1. Double-check that you're entering the correct email address.
+   2. Ensure that you're using a supported email provider.
+   3. Clear your browser cache and cookies.
+   4. Try using a different browser or device to create your new account.
+   5. If the issue persists, please contact our support team for further assistance.
+
+We apologize for any inconvenience this may have caused. If you have any additional questions or need further assistance, please don't hesitate to reach out to us.
+
+Kind regards,
+
+[Agent Name]"
