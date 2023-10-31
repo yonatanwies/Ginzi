@@ -6,9 +6,6 @@ from datetime import datetime
 import os
 import pandas as pd
 
-api_endpoint = "https://ginzi-openai-1.openai.azure.com/openai/deployments/dev-team-gpt35-deployment/chat/completions?api-version=2023-05-15"
-secret_key = "81a9d3aa461b49f4b01383a15fc0bf70"
-
 # Set your OpenAI API key here
 openai.api_key = api_key
 
