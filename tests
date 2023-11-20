@@ -8,10 +8,6 @@ import os
 from openai import AzureOpenAI
 
 
-api_endpoint = "https://ginzi-openai-2.openai.azure.com/openai/deployments/dev-team-gpt4-deployment"
-api_key = "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"
-secret_key = "87f377ab35c942b5bd475c21545d94d8"
-
 # Set your OpenAI API key here
 openai.api_key = api_key
 
@@ -21,7 +17,7 @@ client = AzureOpenAI(
     api_key=secret_key
 )
 
-ag_system_content = "As a support agent in the support team for a general company, generate an empathetic response based on the [Agent Intent:] and the provided [Conversation:] while navigating the user sentiment for a positive customer experience. The response includes a kind attention statement, introduction, body, residual message, and salutation. Don't include any extraneous information. Don't add prefix or suffix to the response. Separate EACH AND EVERY SENTENCE with a blank line, like \n. Answer in the same language of the conversation. Do not include any formatting that wouldn't be included in a formal response. Do not assume any type of information"
+ag_system_content = "As a support agent in the support team for a general company, generate an empathetic response based on the [Agent Intent:] and the provided [Conversation:] while navigating the user sentiment for a positive customer experience. Do not disclose you are a general company. The response includes a kind attention statement, introduction, body, residual message, and salutation. Don't include any extraneous information. Don't add prefix or suffix to the response. Use appropriate spacing. Answer in English only. Do not include any formatting that wouldn't be included in a formal response. Do not assume any type of information"
 
 def test_auto_generated_answers():
     intents = {
@@ -59,19 +55,17 @@ def test_auto_generated_answers():
                 
             response = client.chat.completions.create(
                 model="dev-team-gpt4-deployment",
-                messages=conversation,
+                messages=messages,
                 temperature=0.0,
                 max_tokens=400
-                )
-            temp.append(response.choices[0].message.content)
-            print(response.choices[0].message.content)
+                ).choices[0].message.content
+            temp.append(response["choices"][0]["message"]["content"])
         result.append(temp)
         result.append(["","","","","","","","",""])
 
     with open(f"{os.getcwd()}/Auto_generated_answers-"+f"{datetime.now().strftime('%d-%m-%Y-%H-%M-%S')}.csv", mode="w", newline="") as file:
         writer = csv.writer(file)
         writer.writerows(result)
-     
     return("CSV file created")
     
 
