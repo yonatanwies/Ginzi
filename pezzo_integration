@@ -1,0 +1,147 @@
+from pezzo.client import pezzo
+import redis
+import json
+
+
+
+r = redis.Redis(host='localhost',port=6379,db = 1)
+class PezzoWrapper:
+
+
+    PromptName = [
+        'booster',
+        'casual',
+        'company_policy',
+        'confident',
+        'empathetic',
+        'empower',
+        'formal',
+        'friendly',
+        'informative',
+        'match',
+        'accept',
+        'ask_question',
+        'decline',
+        'goodbye',
+        'confirm',
+        'refer_to_engineering',
+        'refer_to_manager',
+        'macrocraft',
+        'aga_system'
+    ]
+    PezzoPromptName = [
+        'FlavourBooster',
+        'FlavourCasual',
+        'FlavourCompanyPolicy',
+        'FlavourConfident',
+        'FlavourEmpathetic',
+        'FlavourEmpower',
+        'FlavourFormal',
+        'FlavorFriendly',
+        'FlavourInformative',
+        'FlavourMatch',
+        'agaAccept',
+        'agaAskQuestions',
+        'agaDecline',
+        'agaGoodbye',
+        'agaConfirm',
+        'agaReferToEngineering',
+        'agaReferToManager',
+        'MacroCraftSystem',
+        'agaSystem'
+    ]
+    promptNameToPezzoPromptName = {
+        'booster': 'FlavourBooster',
+        'casual': 'FlavourCasual',
+        'company_policy': 'FlavourCompanyPolicy',
+        'confident': 'FlavourConfident',
+        'empathetic': 'FlavourEmpathetic',
+        'empower': 'FlavourEmpower',
+        'formal': 'FlavourFormal',
+        'friendly': 'FlavorFriendly',
+        'informative': 'FlavourInformative',
+        'match': 'FlavourMatch',
+        'accept': 'agaAccept',
+        'ask_question': 'agaAskQuestions',
+        'decline': 'agaDecline',
+        'goodbye': 'agaGoodbye',
+        'confirm': 'agaConfirm',
+        'refer_to_engineering': 'agaReferToEngineering',
+        'refer_to_manager': 'agaReferToManager',
+        'macrocraft': 'MacroCraftSystem',
+        'aga_system': 'agaSystem'
+    }
+
+    def __init__(self,parsed_json=None):
+        self.parsed_json = parsed_json
+
+    def add_prompt_to_cache(self, name: str, role: str, prompt: str) -> str:
+        r.set(name, json.dumps({role: prompt}))
+        return True
+
+    def get_cached_prompt(self, name: str, role: str) -> str:
+        try:
+            result = json.loads(r.get(name))
+            if result != None:
+                return result[role]
+        except:
+            return None
+
+    def get_prompt_from_pezzo(self, name: str, role: str) -> str:
+        prompts = pezzo.get_prompt(name).content['messages']
+        for prompt in prompts:
+            if prompt['role'] == role:
+                return prompt['content']
+        return None
+
+    # @staticmethod
+    def get_prompt_from_file(self, name: str, role: str) -> str:
+        if not self.parsed_json:
+            with open('../../prompts.json', 'r') as file:  # try and catch for file doesn't exist
+                json_data = file.read()
+                self.parsed_json = json.loads(json_data)
+        if name in self.parsed_json and role in self.parsed_json[name]:
+            return self.parsed_json[name][role]
+        else:
+            raise ValueError(f'promptName - {name} not found')
+
+    def get_user_prompt(self, name: str) -> str:
+        # get information from Redis
+        prompt = self.get_cached_prompt(name, 'user')  # first line - through Redis
+        if not prompt:
+
+            try:
+                return self.get_prompt_from_file(name, 'user')  # second line - from file
+
+            except:
+
+                try:
+                    return self.get_prompt_from_pezzo(name, 'user')  # third line - from Pezzo
+
+                except:
+                    raise ValueError(f'promptName {name} does not exist, please add it.')
+
+            pass
+        return prompt
+
+    def get_system_prompt(self, name: str) -> str or ValueError:
+        # get information from Redis
+        prompt = self.get_cached_prompt(name, 'system')  # first line - through Redis
+        if not prompt:
+
+            try:
+                return self.get_prompt_from_file(name, 'system')  # second line - from file
+
+            except:
+
+                try:
+                    return self.get_prompt_from_pezzo(name)  # third line - from Pezzo
+
+                except:
+                    return ValueError(f'promptName {name} does not exist, please add it.')
+
+            pass
+        return prompt
+
+    def get_both(self, name: str) -> tuple:
+        return self.get_user_prompt(name), self.get_system_prompt(name)
