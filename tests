@@ -4,16 +4,15 @@ import csv
 import openai
 from datetime import datetime
 import os
-# import pandas as pd
 from openai import AzureOpenAI
 
 
-# Set your OpenAI API key here
+api_key = "your_api_key_here"
 openai.api_key = api_key
 
 client = AzureOpenAI(
     api_version="2023-05-15",
-    azure_endpoint="https://ginzi-openai-2.openai.azure.com",
+    azure_endpoint="endpoint_here",
     api_key=secret_key
 )
 
@@ -115,8 +114,6 @@ def manually_test_different_macros():
     return("CSV file created")
     
         
-# manually_test_different_macros()
-
 
 
 def test_macros_with_messages(number_of_messages,messages,macros):
